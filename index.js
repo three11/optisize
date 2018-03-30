@@ -53,7 +53,7 @@ const resize = params => {
 	const resized = [];
 
 	fs.readdir(src, (err, files) => {
-		files.filter(file => isImage).forEach(file => {
+		files.filter(isImage).forEach(file => {
 			const srcPath = path.join(src, file);
 			const destPath = path.join(dest, file);
 
