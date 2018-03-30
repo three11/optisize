@@ -44,7 +44,7 @@ const optisizeSettings = {
 	srcPath: 'path/to/large/images';
 	destPath: 'path/to/resized/images';
 	width: 640;
-	hight: 360;
+	height: 360;
 }
 
 optisize(optisizeSettings);
