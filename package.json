@@ -1,8 +1,11 @@
 {
   "name": "optisize",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Resize and optimize images in a folder with nodejs",
   "main": "index.js",
+  "bin": {
+    "optisize": "cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/three11/animate-top-offset.git"

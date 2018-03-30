@@ -8,7 +8,6 @@ const path = require('path');
  * External dependencies
  */
 const sharp = require('sharp');
-const yargs = require('yargs').argv;
 
 /**
  * Imagemin and its plugins
@@ -32,11 +31,6 @@ const imageMinPlugins = [
 		quality: 90
 	})
 ];
-
-/**
- * Command line arguments
- */
-const { src, dest, width, height } = yargs;
 
 /**
  * Filter only image foles
@@ -77,7 +71,5 @@ const resize = params => {
 		});
 	});
 };
-
-resize({ src, dest, width, height });
 
 module.exports = resize;
