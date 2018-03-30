@@ -34,7 +34,45 @@ This tool accepts four arguments:
 
 ## Usage
 
-TODO
+### Default:
+
+```
+const optisize = require('optisize');
+const optisizeSettings = {
+	srcPath: 'path/to/large/images';
+	destPath: 'path/to/resized/images';
+	width: 640;
+	hight: 360;
+}
+
+optisize(optisizeSettings);
+```
+
+### As package.json script:
+
+Add the following in the `scripts` section of your `package.json` file:
+
+```
+"resize": "optisize"
+```
+
+Then invoke the script and supply the required arguments:
+
+```
+$ yarn resize --src="path/to/large/images" --dest="path/to/resized/images" --width=640 --height=360
+```
+
+or
+
+```
+$ npm run resize --src="path/to/large/images" --dest="path/to/resized/images" --width=640 --height=360
+```
+
+## Important note!
+
+`width` and `height` settings are not required and can be supplied together, alone and also can be missing.
+
+If they are missing, the images will only be optimized.
 
 ## License
 
