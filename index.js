@@ -38,8 +38,22 @@ const imageMinPlugins = [
  */
 const { src, dest, width, height } = yargs;
 
+/**
+ * Filter only image foles
+ *
+ * @param  {String} file Filename
+ *
+ * @return {Boolean}
+ */
 const isImage = file => file.match(/\.(jpeg|jpg|gif|png)$/);
 
+/**
+ * Resize images
+ *
+ * @param  {Object} params Settings
+ *
+ * @return {Void}
+ */
 const resize = params => {
 	const { src, dest, width, height } = params;
 	const resized = [];
