@@ -53,10 +53,16 @@ const resize = params => {
 	const resized = [];
 
 	fs.readdir(src, (err, files) => {
+		/**
+		 * Process all files
+		 */
 		files.filter(isImage).forEach(file => {
 			const srcPath = path.join(src, file);
 			const destPath = path.join(dest, file);
 
+			/**
+			 * Resize files and add result to promises array
+			 */
 			resized.push(
 				sharp(srcPath)
 					.resize(width, height)
@@ -64,6 +70,9 @@ const resize = params => {
 			);
 		});
 
+		/**
+		 * When all files are resized, optimize them
+		 */
 		Promise.all(resized).then(() => {
 			imagemin([`${dest}/*.{jpeg,jpg,gif,png}`], dest, {
 				plugins: imageMinPlugins
