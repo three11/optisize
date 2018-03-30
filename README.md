@@ -1,15 +1,17 @@
 # Optisize
 
-CLI tool for resizing and optimizing images with NodeJS
+Tool for resizing and optimizing images with NodeJS
 
 ## About
 
 There are many packages and tools which do that.
+
 Most of them are doing a lot of other things.
+
 This package is focused on two tasks and does them pretty well:
 
 1. Resizes your images and
-2. Optimizes their size.
+2. Optimizes their size
 
 ## Install
 
