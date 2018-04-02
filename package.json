@@ -1,8 +1,11 @@
 {
   "name": "@three11/optisize",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Resize and optimize images in a folder with nodejs",
   "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
   "bin": {
     "optisize": "cli.js"
   },
@@ -45,5 +48,9 @@
     "imagemin-pngquant": "^5.1.0",
     "sharp": "^0.20.1",
     "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "image-size": "^0.6.2",
+    "tape": "^4.9.0"
   }
 }

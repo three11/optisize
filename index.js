@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-const fs = require('fs');
-const path = require('path');
+const { join } = require('path');
+const { readdirSync } = require('fs');
 
 /**
  * External dependencies
@@ -10,14 +10,19 @@ const path = require('path');
 const sharp = require('sharp');
 
 /**
- * Imagemin and its plugins
+ * Imagemin dependencies
  */
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminGifsicle = require('imagemin-gifsicle');
 const imageminPNGquant = require('imagemin-pngquant');
 
-const imageMinPlugins = [
+/**
+ * Imagemin settings
+ *
+ * @type {Array}
+ */
+const plugins = [
 	imageminGifsicle({
 		interlaced: true
 	}),
@@ -28,7 +33,7 @@ const imageMinPlugins = [
 
 	imageminPNGquant({
 		speed: 1,
-		quality: 90
+		quality: 70
 	})
 ];
 
@@ -42,43 +47,45 @@ const imageMinPlugins = [
 const isImage = file => file.match(/\.(jpeg|jpg|gif|png)$/);
 
 /**
+ * Resize an image using Sharp
+ *
+ * @param  {Object} params
+ * @param  {String} file
+ *
+ * @return {Promise}
+ */
+const resizeImage = (params, file) =>
+	sharp(join(params.src, file))
+		.resize(params.width, params.height)
+		.toFile(join(params.dest, file));
+
+/**
+ * Optimize images in a folder
+ *
+ * @param  {String} folder
+ *
+ * @return {Void}
+ */
+const optimizeImages = folder => {
+	imagemin([`${folder}/*.{jpeg,jpg,gif,png}`], folder, { plugins });
+};
+
+/**
  * Resize images
  *
  * @param  {Object} params Settings
  *
- * @return {Void}
+ * @return {Promise}
  */
-const resize = params => {
+const resize = async params => {
 	const { src, dest, width, height } = params;
-	const resized = [];
+	const files = (await Promise.all(await readdirSync(src)))
+		.filter(isImage)
+		.map(file => resizeImage(params, file));
 
-	fs.readdir(src, (err, files) => {
-		/**
-		 * Process all files
-		 */
-		files.filter(isImage).forEach(file => {
-			const srcPath = path.join(src, file);
-			const destPath = path.join(dest, file);
+	optimizeImages(dest);
 
-			/**
-			 * Resize files and add result to promises array
-			 */
-			resized.push(
-				sharp(srcPath)
-					.resize(width, height)
-					.toFile(destPath)
-			);
-		});
-
-		/**
-		 * When all files are resized, optimize them
-		 */
-		Promise.all(resized).then(() => {
-			imagemin([`${dest}/*.{jpeg,jpg,gif,png}`], dest, {
-				plugins: imageMinPlugins
-			});
-		});
-	});
+	return Promise.all(files);
 };
 
 module.exports = resize;
