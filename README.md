@@ -33,7 +33,7 @@ This tool accepts the following arguments:
 2. `width`: Number - Target width (Optional)
 3. `height`: Number - Target height (Optional)
 
-* The `src` argument should represent an absolute path to your images folder. All images located inside other folders in that folder will be recursively optisized as well.
+* The `src` argument should represent a relative path to your images folder. The folder is relative to your `node_modules` folder. All images located inside other folders in that folder will be recursively optisized as well.
 
 ## Usage
 
@@ -67,7 +67,7 @@ $ yarn optisize --src="path/to/images" --width=640 --height=360
 or
 
 ```
-$ npm run resize --src="path/to/large/images" --dest="path/to/resized/images" --width=640 --height=360
+$ npm run resize --src="path/to/large/images" --width=640 --height=360
 ```
 
 ## Important note!

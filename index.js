@@ -61,6 +61,9 @@ const optisizeSingle = async (params, file) => {
 			writeFileSync(file, buffer);
 
 			spinner.succeed(`Optisized ${file}`);
+		})
+		.catch(err => {
+			spinner.fail(`Optisized failed. Output: ${err}`);
 		});
 };
 
