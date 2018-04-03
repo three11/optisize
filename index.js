@@ -1,18 +1,15 @@
 /**
- * Internal dependencies
+ * Node dependencies
  */
-const { join } = require('path');
+const { join, resolve } = require('path');
 const { writeFileSync } = require('fs');
 
 /**
  * External dependencies
  */
+const ora = require('ora');
 const glob = require('glob');
 const sharp = require('sharp');
-
-/**
- * Imagemin dependencies
- */
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminGifsicle = require('imagemin-gifsicle');
@@ -20,18 +17,14 @@ const imageminPNGquant = require('imagemin-pngquant');
 
 /**
  * Imagemin settings
- *
- * @type {Array}
  */
 const plugins = [
 	imageminGifsicle({
 		interlaced: true
 	}),
-
 	imageminMozjpeg({
 		quality: 70
 	}),
-
 	imageminPNGquant({
 		speed: 1,
 		quality: 70
@@ -40,10 +33,16 @@ const plugins = [
 
 /**
  * Glob pattern for all images
- *
- * @type {String}
  */
 const imagesGlob = '/*.{jpeg,jpg,gif,png}';
+
+/**
+ * Initialize CLI spinner
+ */
+const spinner = ora({
+	text: 'Optisize in progress...',
+	spinner: 'bouncingBall'
+}).start();
 
 /**
  * Resize an image using Sharp
@@ -51,7 +50,7 @@ const imagesGlob = '/*.{jpeg,jpg,gif,png}';
  * @param  {Object} params
  * @param  {String} file
  *
- * @return {Promise}
+ * @return {Void}
  */
 const optisizeSingle = async (params, file) => {
 	return await sharp(file)
@@ -61,7 +60,7 @@ const optisizeSingle = async (params, file) => {
 		.then(buffer => {
 			writeFileSync(file, buffer);
 
-			return buffer;
+			spinner.succeed(`Optisized ${file}`);
 		});
 };
 
@@ -75,7 +74,7 @@ const optisizeSingle = async (params, file) => {
 const optisize = async params => {
 	const { src } = params;
 	const files = glob
-		.sync(`${src}/**${imagesGlob}`)
+		.sync(`${resolve(src)}/**${imagesGlob}`)
 		.map(file => optisizeSingle(params, file));
 
 	return Promise.all(files);
