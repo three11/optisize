@@ -9,17 +9,17 @@ const yargs = require('yargs').argv;
 /**
  * Internal dependencies
  */
-const resize = require('./');
+const optisize = require('./');
 
 /**
  * Command line arguments
  */
-const { src, dest, width, height } = yargs;
+const { src, width, height } = yargs;
 
-if (!src || !dest) {
-	console.error('Please provide source and/or destination folders');
+if (!src) {
+	console.error('Please provide source folder');
 
 	return;
 }
 
-resize({ src, dest, width, height });
+optisize({ src, width, height });

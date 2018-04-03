@@ -27,12 +27,13 @@ yarn add @three11/optisize
 
 ## Arguments
 
-This tool accepts four arguments:
+This tool accepts the following arguments:
 
-1. `src`: String - Source folder (Required)
-2. `dest`: String - Destination folder (Required)
-3. `width`: Number - Target width (Optional)
-4. `height`: Number - Target height (Optional)
+1. `src`: String - Source folder (Required) \*
+2. `width`: Number - Target width (Optional)
+3. `height`: Number - Target height (Optional)
+
+* The `src` argument should represent an absolute path to your images folder. All images located inside other folders in that folder will be recursively optisized as well.
 
 ## Usage
 
@@ -41,8 +42,7 @@ This tool accepts four arguments:
 ```
 const optisize = require('optisize');
 const optisizeSettings = {
-	srcPath: 'path/to/large/images';
-	destPath: 'path/to/resized/images';
+	src: 'path/to/large/images';
 	width: 640;
 	height: 360;
 }
@@ -55,13 +55,13 @@ optisize(optisizeSettings);
 Add the following in the `scripts` section of your `package.json` file:
 
 ```
-"resize": "optisize"
+"optisize": "optisize"
 ```
 
 Then invoke the script and supply the required arguments:
 
 ```
-$ yarn resize --src="path/to/large/images" --dest="path/to/resized/images" --width=640 --height=360
+$ yarn optisize --src="path/to/images" --width=640 --height=360
 ```
 
 or

@@ -2,11 +2,12 @@
  * Internal dependencies
  */
 const { join } = require('path');
-const { readdirSync } = require('fs');
+const { writeFileSync } = require('fs');
 
 /**
  * External dependencies
  */
+const glob = require('glob');
 const sharp = require('sharp');
 
 /**
@@ -38,13 +39,11 @@ const plugins = [
 ];
 
 /**
- * Filter only image foles
+ * Glob pattern for all images
  *
- * @param  {String} file Filename
- *
- * @return {Boolean}
+ * @type {String}
  */
-const isImage = file => file.match(/\.(jpeg|jpg|gif|png)$/);
+const imagesGlob = '/*.{jpeg,jpg,gif,png}';
 
 /**
  * Resize an image using Sharp
@@ -54,20 +53,16 @@ const isImage = file => file.match(/\.(jpeg|jpg|gif|png)$/);
  *
  * @return {Promise}
  */
-const resizeImage = (params, file) =>
-	sharp(join(params.src, file))
+const optisizeSingle = async (params, file) => {
+	return await sharp(file)
 		.resize(params.width, params.height)
-		.toFile(join(params.dest, file));
+		.toBuffer()
+		.then(buffer => imagemin.buffer(buffer, { plugins }))
+		.then(buffer => {
+			writeFileSync(file, buffer);
 
-/**
- * Optimize images in a folder
- *
- * @param  {String} folder
- *
- * @return {Void}
- */
-const optimizeImages = folder => {
-	imagemin([`${folder}/*.{jpeg,jpg,gif,png}`], folder, { plugins });
+			return buffer;
+		});
 };
 
 /**
@@ -77,15 +72,13 @@ const optimizeImages = folder => {
  *
  * @return {Promise}
  */
-const resize = async params => {
-	const { src, dest, width, height } = params;
-	const files = (await Promise.all(await readdirSync(src)))
-		.filter(isImage)
-		.map(file => resizeImage(params, file));
-
-	optimizeImages(dest);
+const optisize = async params => {
+	const { src } = params;
+	const files = glob
+		.sync(`${src}/**${imagesGlob}`)
+		.map(file => optisizeSingle(params, file));
 
 	return Promise.all(files);
 };
 
-module.exports = resize;
+module.exports = optisize;
