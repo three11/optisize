@@ -67,7 +67,7 @@ $ yarn optisize --src="path/to/images" --width=640 --height=360
 or
 
 ```
-$ npm run resize --src="path/to/large/images" --width=640 --height=360
+$ npm run optisize --src="path/to/images" --width=640 --height=360
 ```
 
 ## Important note!
