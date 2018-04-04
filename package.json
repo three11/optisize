@@ -9,6 +9,10 @@
   "bin": {
     "optisize": "cli.js"
   },
+  "engines": {
+    "node": ">=7.6",
+    "npm": ">=5.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/three11/animate-top-offset.git"
