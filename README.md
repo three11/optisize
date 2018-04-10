@@ -42,7 +42,7 @@ This tool accepts the following arguments:
 ```
 const optisize = require('optisize');
 const optisizeSettings = {
-	src: 'path/to/large/images';
+	src: 'path/to/images';
 	width: 640;
 	height: 360;
 }
