@@ -17,16 +17,11 @@
     "type": "git",
     "url": "git+https://github.com/three11/animate-top-offset.git"
   },
-  "keywords": [
-    "NodeJS",
-    "Image",
-    "Resize",
-    "Optimize"
-  ],
+  "keywords": ["NodeJS", "Image", "Resize", "Optimize"],
   "authors": [
     {
       "name": "Three 11 Ltd",
-      "email": "contact.three11@gmail.com",
+      "email": "hello@three-11.com",
       "role": "Developer"
     },
     {
