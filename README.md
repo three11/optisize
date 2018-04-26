@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/dt/@three11/optisize.svg)](https://www.npmjs.com/package/@three11/optisize)
+
 # Optisize
 
 Tool for resizing and optimizing images with NodeJS
