@@ -74,8 +74,16 @@ const optisizeSingle = async (params, file) => {
  *
  * @return {Promise}
  */
-const optisize = async params => {
+const optisize = async (params = {}) => {
 	const { src } = params;
+	const noSrcMsg = 'Optisized failed: No src provided.';
+
+	if (!src) {
+		spinner.fail(noSrcMsg);
+
+		return Promise.reject(noSrcMsg);
+	}
+
 	const files = glob
 		.sync(`${resolve(src)}/**${imagesGlob}`)
 		.map(file => optisizeSingle(params, file));
