@@ -10,6 +10,14 @@ const src = 'assets';
 const tape = require('tape');
 const optisize = require('./');
 
+tape('should warn for missing src', t => {
+	optisize().catch(result => {
+		t.equal(result, 'Optisized failed: No src provided.');
+	});
+
+	t.end();
+});
+
 tape('width should be 1000', t => {
 	optisize({
 		src,
