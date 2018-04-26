@@ -16,10 +16,4 @@ const optisize = require('./');
  */
 const { src, width, height } = yargs;
 
-if (!src) {
-	console.error('Please provide source folder');
-
-	return;
-}
-
 optisize({ src, width, height });
