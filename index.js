@@ -26,7 +26,6 @@ const plugins = [
 		quality: 70
 	}),
 	imageminPNGquant({
-		speed: 1,
 		quality: 70
 	})
 ];
