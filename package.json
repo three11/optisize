@@ -17,7 +17,12 @@
     "type": "git",
     "url": "git+https://github.com/three11/animate-top-offset.git"
   },
-  "keywords": ["NodeJS", "Image", "Resize", "Optimize"],
+  "keywords": [
+    "NodeJS",
+    "Image",
+    "Resize",
+    "Optimize"
+  ],
   "authors": [
     {
       "name": "Three 11 Ltd",
@@ -46,12 +51,12 @@
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.1.0",
-    "ora": "^2.0.0",
-    "sharp": "^0.20.1",
+    "ora": "^2.1.0",
+    "sharp": "^0.20.4",
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "image-size": "^0.6.2",
-    "tape": "^4.9.0"
+    "image-size": "^0.6.3",
+    "tape": "^4.9.1"
   }
 }
