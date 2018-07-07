@@ -12,6 +12,8 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/optisize/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/optisize/graphs/commit-activity)
 [![Greenkeeper badge](https://badges.greenkeeper.io/three11/optisize.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/three11/optisize/status.svg)](https://david-dm.org/three11/optisize)
+[![devDependencies Status](https://david-dm.org/three11/optisize/dev-status.svg)](https://david-dm.org/three11/optisize?type=dev)
 
 [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
 
@@ -27,18 +29,18 @@ Most of them are doing a lot of other things.
 
 This package is focused on two tasks and does them pretty well:
 
-1. Resizes your images and
-2. Optimizes their size
+1.  Resizes your images and
+2.  Optimizes their size
 
 ## Install
 
-```console
+```sh
 npm i @three11/optisize
 ```
 
 or
 
-```console
+```sh
 yarn add @three11/optisize
 ```
 
@@ -46,11 +48,11 @@ yarn add @three11/optisize
 
 This tool accepts the following arguments:
 
-1. `src`: String - Source folder (Required) \*
-2. `width`: Number - Target width (Optional)
-3. `height`: Number - Target height (Optional)
+1.  `src`: String - Source folder (Required) \*
+2.  `width`: Number - Target width (Optional)
+3.  `height`: Number - Target height (Optional)
 
-* The `src` argument should represent a relative path to your images folder. The folder is relative to your `node_modules` folder. All images located inside other folders in that folder will be recursively optisized as well.
+-   The `src` argument should represent a relative path to your images folder. The folder is relative to your `node_modules` folder. All images located inside other folders in that folder will be recursively optisized as well.
 
 ## Usage
 
@@ -72,18 +74,20 @@ optisize(optisizeSettings);
 Add the following in the `scripts` section of your `package.json` file:
 
 ```json
-"optisize": "optisize"
+{
+	"optisize": "optisize"
+}
 ```
 
 Then invoke the script and supply the required arguments:
 
-```console
+```sh
 yarn optisize --src="path/to/images" --width=640 --height=360
 ```
 
 or
 
-```console
+```sh
 npm run optisize --src="path/to/images" --width=640 --height=360
 ```
 
