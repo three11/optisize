@@ -52,12 +52,12 @@ This tool accepts the following arguments:
 ### Default:
 
 ```javascript
-const optisize = require('optisize');
+const optisize = require('@three11/optisize');
 const optisizeSettings = {
-	src: 'path/to/images';
-	width: 640;
-	height: 360;
-}
+	src: 'path/to/images',
+	width: 640,
+	height: 360
+};
 
 optisize(optisizeSettings);
 ```
