@@ -1,8 +1,8 @@
 /**
  * Node dependencies
  */
-const { join, resolve } = require('path');
-const { writeFileSync } = require('fs');
+const { resolve } = require('path');
+const { writeFileSync, existsSync } = require('fs');
 
 /**
  * External dependencies
@@ -62,7 +62,7 @@ const optisizeSingle = async (params, file) => {
 			spinner.succeed(`Optisized ${file}`);
 		})
 		.catch(err => {
-			spinner.fail(`Optisized failed. Output: ${err}`);
+			spinner.fail(`Optisize failed. Output: ${err}`);
 		});
 };
 
@@ -76,11 +76,18 @@ const optisizeSingle = async (params, file) => {
 const optisize = async (params = {}) => {
 	const { src } = params;
 	const noSrcMsg = 'Optisized failed: No src provided.';
+	const wrongSrcMsg = 'Optisize failed: Wrong src provided.'
 
 	if (!src) {
 		spinner.fail(noSrcMsg);
 
 		return Promise.reject(noSrcMsg);
+	}
+
+	if (!existsSync(src)){
+		spinner.fail(noSrcMsg);
+
+		return Promise.reject(wrongSrcMsg);
 	}
 
 	const files = glob
