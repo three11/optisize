@@ -85,7 +85,7 @@ const optisize = async (params = {}) => {
 	}
 
 	if (!existsSync(src)){
-		spinner.fail(noSrcMsg);
+		spinner.fail(wrongSrcMsg);
 
 		return Promise.reject(wrongSrcMsg);
 	}
