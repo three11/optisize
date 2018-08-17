@@ -1,6 +1,6 @@
 {
   "name": "@three11/optisize",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Resize and optimize images in a folder with nodejs",
   "main": "index.js",
   "scripts": {
