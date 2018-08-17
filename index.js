@@ -2,7 +2,7 @@
  * Node dependencies
  */
 const { resolve } = require('path');
-const { writeFileSync, existsSync } = require('fs');
+const { writeFileSync, existsSync, lstatSync } = require('fs');
 
 /**
  * External dependencies
@@ -71,30 +71,38 @@ const optisizeSingle = async (params, file) => {
  *
  * @param  {Object} params Settings
  *
- * @return {Promise}
+ * @return {Promise|undefined}
  */
 const optisize = async (params = {}) => {
 	const { src } = params;
 	const noSrcMsg = 'Optisized failed: No src provided.';
-	const wrongSrcMsg = 'Optisize failed: Wrong src provided.'
+	const wrongSrcMsg = 'Optisize failed: Wrong src provided.';
+	const wrongFileMsg = 'Optisize failed: Wrong file type provided.';
 
 	if (!src) {
 		spinner.fail(noSrcMsg);
 
-		return Promise.reject(noSrcMsg);
+		return;
 	}
 
 	if (!existsSync(src)){
 		spinner.fail(wrongSrcMsg);
 
-		return Promise.reject(wrongSrcMsg);
+		return;
 	}
 
-	const files = glob
-		.sync(`${resolve(src)}/**${imagesGlob}`)
-		.map(file => optisizeSingle(params, file));
+	const isDir = lstatSync(src).isDirectory();
 
-	return Promise.all(files);
+	if (!isDir && !src.match(/.(jpg|jpeg|png|gif)$/i)) {
+		spinner.fail(wrongFileMsg);
+
+		return;
+	}
+
+	const files = isDir ? glob.sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
+	const results = files.map(file => optisizeSingle(params, file));
+
+	return Promise.all(results);
 };
 
 module.exports = optisize;
