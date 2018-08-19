@@ -75,7 +75,7 @@ const optisizeSingle = async (params, file) => {
  */
 const optisize = async (params = {}) => {
 	const { src } = params;
-	const noSrcMsg = 'Optisized failed: No src provided.';
+	const noSrcMsg = 'Optisize failed: No src provided.';
 	const wrongSrcMsg = 'Optisize failed: Wrong src provided.';
 	const wrongFileMsg = 'Optisize failed: Wrong file type provided.';
 
