@@ -41,11 +41,11 @@ yarn add @three11/optisize
 
 This tool accepts the following arguments:
 
-1.  `src`: String - Source folder (Required) \*
+1.  `src`: String - Source folder or file (Required)
 2.  `width`: Number - Target width (Optional)
 3.  `height`: Number - Target height (Optional)
 
--   The `src` argument should represent a relative path to your images folder. The folder is relative to your `node_modules` folder. All images located inside other folders in that folder will be recursively optisized as well.
+-   The `src` argument should represent a relative path to your images folder or to your single image. The path is relative to your project's root folder. If the `src` is a folder, all images located inside other folders in that folder will be recursively optisized as well.
 
 ## Usage
 
