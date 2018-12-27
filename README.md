@@ -6,7 +6,6 @@
 [![npm](https://img.shields.io/npm/dt/@three11/optisize.svg)](https://www.npmjs.com/package/@three11/optisize)
 [![npm](https://img.shields.io/npm/v/@three11/optisize.svg)](https://www.npmjs.com/package/@three11/optisize)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/three11/optisize/README.md)](https://github.com/three11/optisize/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/three11/optisize.svg)](https://greenkeeper.io/)
 
 # Optisize
 
