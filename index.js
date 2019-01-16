@@ -26,7 +26,7 @@ const plugins = [
 		quality: 70
 	}),
 	imageminPNGquant({
-		quality: 70
+		quality: [0.5, 0.7]
 	})
 ];
 
@@ -85,7 +85,7 @@ const optisize = async (params = {}) => {
 		return;
 	}
 
-	if (!existsSync(src)){
+	if (!existsSync(src)) {
 		spinner.fail(wrongSrcMsg);
 
 		return;
