@@ -53,7 +53,7 @@
 		"imagemin-pngquant": "^7.0.0",
 		"ora": "^3.0.0",
 		"sharp": "^0.21.2",
-		"yargs": "^12.0.5"
+		"yargs": "^13.0.0"
 	},
 	"devDependencies": {
 		"image-size": "0.7.1",
