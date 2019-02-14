@@ -57,6 +57,6 @@
 	},
 	"devDependencies": {
 		"image-size": "0.7.1",
-		"tape": "4.10.0"
+		"tape": "4.10.1"
 	}
 }
