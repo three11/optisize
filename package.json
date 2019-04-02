@@ -56,7 +56,7 @@
 		"yargs": "^13.0.0"
 	},
 	"devDependencies": {
-		"image-size": "0.7.2",
+		"image-size": "0.7.3",
 		"tape": "4.10.1"
 	}
 }
