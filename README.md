@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/npm/v/@three11/optisize.svg)](https://www.npmjs.com/package/@three11/optisize)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/three11/optisize/README.md)](https://github.com/three11/optisize/)
 
-![Optisize Logo](https://raw.githubusercontent.com/three11/optisize/master/logo/optisize-logo-horizontal.svg?sanitize=true)
+<div aria-label="Optisize logo image in purple" style="height: 0; padding-bottom: 40%; background: url(https://raw.githubusercontent.com/three11/optisize/master/logo/optisize-logo-horizontal.svg?sanitize=true) no-repeat 50% 50% / cover"></div>
 
 # Optisize
 
