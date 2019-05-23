@@ -35,4 +35,8 @@ yarn.lock
 .prettierignore
 
 # Config files
+_config.yml
 renovate.json
+
+# Logo
+/logo
