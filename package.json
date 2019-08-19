@@ -55,7 +55,7 @@
     "imagemin-pngquant": "^8.0.0",
     "ora": "^3.0.0",
     "sharp": "^0.22.0",
-    "yargs": "^13.0.0",
+    "yargs": "^14.0.0",
     "snyk": "^1.195.1"
   },
   "devDependencies": {
