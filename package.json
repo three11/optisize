@@ -59,7 +59,7 @@
 		"yargs": "14.0.0"
 	},
 	"devDependencies": {
-		"image-size": "0.7.5",
+		"image-size": "0.8.1",
 		"tape": "4.11.0"
 	},
 	"snyk": true
