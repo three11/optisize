@@ -53,7 +53,7 @@
 		"imagemin-gifsicle": "6.0.1",
 		"imagemin-mozjpeg": "8.0.0",
 		"imagemin-pngquant": "8.0.0",
-		"ora": "4.0.1",
+		"ora": "4.0.2",
 		"sharp": "0.23.1",
 		"snyk": "1.228.5",
 		"yargs": "14.0.0"
