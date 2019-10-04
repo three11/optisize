@@ -1,66 +1,66 @@
 {
-  "name": "@three11/optisize",
-  "version": "1.0.0",
-  "description": "Resize and optimize images in a folder with nodejs",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape test.js",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
-  },
-  "bin": {
-    "optisize": "cli.js"
-  },
-  "engines": {
-    "node": ">=7.6",
-    "npm": ">=5.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/three11/optisize.git"
-  },
-  "keywords": [
-    "NodeJS",
-    "Image",
-    "Resize",
-    "Optimize"
-  ],
-  "authors": [
-    {
-      "name": "Three 11 Ltd",
-      "email": "hello@three-11.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Alexander Panayotov",
-      "email": "alexander.panayotov@gmail.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Atanas Atanasov",
-      "email": "scriptex.bg@gmail.com",
-      "role": "Developer"
-    }
-  ],
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/three11/optisize/issues"
-  },
-  "homepage": "https://github.com/three11/optisize#readme",
-  "dependencies": {
-    "glob": "7.1.4",
-    "imagemin": "7.0.0",
-    "imagemin-gifsicle": "6.0.1",
-    "imagemin-mozjpeg": "8.0.0",
-    "imagemin-pngquant": "8.0.0",
-    "ora": "4.0.2",
-    "sharp": "0.23.1",
-    "snyk": "^1.230.5",
-    "yargs": "14.0.0"
-  },
-  "devDependencies": {
-    "image-size": "0.8.3",
-    "tape": "4.11.0"
-  },
-  "snyk": true
+	"name": "@three11/optisize",
+	"version": "1.0.0",
+	"description": "Resize and optimize images in a folder with nodejs",
+	"main": "index.js",
+	"scripts": {
+		"test": "tape test.js",
+		"snyk-protect": "snyk protect",
+		"prepublish": "npm run snyk-protect"
+	},
+	"bin": {
+		"optisize": "cli.js"
+	},
+	"engines": {
+		"node": ">=7.6",
+		"npm": ">=5.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/three11/optisize.git"
+	},
+	"keywords": [
+		"NodeJS",
+		"Image",
+		"Resize",
+		"Optimize"
+	],
+	"authors": [
+		{
+			"name": "Three 11 Ltd",
+			"email": "hello@three-11.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Alexander Panayotov",
+			"email": "alexander.panayotov@gmail.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Atanas Atanasov",
+			"email": "scriptex.bg@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/three11/optisize/issues"
+	},
+	"homepage": "https://github.com/three11/optisize#readme",
+	"dependencies": {
+		"glob": "7.1.4",
+		"imagemin": "7.0.0",
+		"imagemin-gifsicle": "6.0.1",
+		"imagemin-mozjpeg": "8.0.0",
+		"imagemin-pngquant": "8.0.0",
+		"ora": "4.0.2",
+		"sharp": "0.23.1",
+		"snyk": "1.230.5",
+		"yargs": "14.0.0"
+	},
+	"devDependencies": {
+		"image-size": "0.8.3",
+		"tape": "4.11.0"
+	},
+	"snyk": true
 }
