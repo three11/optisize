@@ -56,7 +56,7 @@
 		"ora": "4.0.2",
 		"sharp": "0.23.1",
 		"snyk": "1.230.5",
-		"yargs": "14.0.0"
+		"yargs": "14.2.0"
 	},
 	"devDependencies": {
 		"image-size": "0.8.3",
