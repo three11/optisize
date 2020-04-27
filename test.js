@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * External dependencies
  */
@@ -22,25 +23,22 @@ tape('width should be 1000', t => {
 	optisize({
 		src,
 		width: 1000
-	}).then(files => {
-		const { width, height } = sizeOf('assets/unicorn.png');
+	}).then(_ => {
+		const { width } = sizeOf('assets/unicorn.png');
 
 		t.equal(1000, width);
+		t.end();
 	});
-
-	t.end();
 });
 
 tape('height should be 500', t => {
 	optisize({
 		src,
 		height: 500
-	}).then(files => {
-		const { width, height } = sizeOf('assets/unicorn.png');
+	}).then(_ => {
+		const { height } = sizeOf('assets/unicorn.png');
 
 		t.equal(500, height);
+		t.end();
 	});
-
-	t.end();
 });
-
