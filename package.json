@@ -49,7 +49,7 @@
 		"glob": "7.1.6",
 		"imagemin": "7.0.1",
 		"imagemin-gifsicle": "7.0.0",
-		"imagemin-mozjpeg": "8.0.0",
+		"imagemin-mozjpeg": "9.0.0",
 		"imagemin-pngquant": "8.0.0",
 		"ora": "4.0.4",
 		"sharp": "0.25.3",
