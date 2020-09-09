@@ -50,7 +50,7 @@
 		"imagemin": "7.0.1",
 		"imagemin-gifsicle": "7.0.0",
 		"imagemin-mozjpeg": "9.0.0",
-		"imagemin-pngquant": "9.0.0",
+		"imagemin-pngquant": "9.0.1",
 		"ora": "5.1.0",
 		"sharp": "0.26.0",
 		"yargs": "16.0.0"
