@@ -50,6 +50,29 @@ const spinner = ora({
  * @param  {Object} params
  * @param  {String} file
  *
+ * @return {Promise<Buffer | void>}
+ */
+const optisizeFile = async (params, file) => {
+	return await sharp(file)
+		.resize(params.width, params.height)
+		.toBuffer()
+		.then(buffer => imagemin.buffer(buffer, { plugins }))
+		.then(buffer => {
+			spinner.succeed(`Optisized ${file}`);
+
+			return buffer;
+		})
+		.catch(err => {
+			spinner.fail(`Optisize failed. Output: ${err}`);
+		});
+};
+
+/**
+ * Resize an image using Sharp
+ *
+ * @param  {Object} params
+ * @param  {String} file
+ *
  * @return {Promise<void>}
  */
 const optisizeSingle = async (params, file) => {
@@ -107,4 +130,5 @@ const optisize = async (params = {}) => {
 };
 
 module.exports = optisize;
+module.exports.optisizeFile = optisizeFile;
 module.exports.optisizeSingle = optisizeSingle;
