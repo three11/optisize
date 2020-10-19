@@ -36,6 +36,7 @@ yarn.lock
 
 # Config files
 _config.yml
+.whitesource
 renovate.json
 
 # Logo

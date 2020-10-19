@@ -25,6 +25,7 @@ const plugins = [
 	imageminMozjpeg({
 		quality: 70
 	}),
+	// @ts-ignore
 	imageminPNGquant({
 		quality: [0.5, 0.7]
 	})
@@ -49,7 +50,7 @@ const spinner = ora({
  * @param  {Object} params
  * @param  {String} file
  *
- * @return {Void}
+ * @return {Promise<void>}
  */
 const optisizeSingle = async (params, file) => {
 	return await sharp(file)
@@ -71,7 +72,7 @@ const optisizeSingle = async (params, file) => {
  *
  * @param  {Object} params Settings
  *
- * @return {Promise|undefined}
+ * @return {Promise}
  */
 const optisize = async (params = {}) => {
 	const { src } = params;
@@ -106,3 +107,4 @@ const optisize = async (params = {}) => {
 };
 
 module.exports = optisize;
+module.exports.optisizeSingle = optisizeSingle;
