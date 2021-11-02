@@ -5,8 +5,8 @@ import { writeFileSync, existsSync, lstatSync } from 'fs';
 
 import ora from 'ora';
 import sharp from 'sharp';
-import { sync } from 'glob';
 import imagemin from 'imagemin';
+import { globby } from 'globby';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminPNGquant from 'imagemin-pngquant';
@@ -107,7 +107,7 @@ export const optisize = async (params = {}) => {
 		return Promise.reject(wrongFileMsg);
 	}
 
-	const files = isDir ? sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
+	const files = isDir ? await globby(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
 	const results = files.map(file => optisizeSingle(params, file));
 
 	return Promise.all(results);

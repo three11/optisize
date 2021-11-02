@@ -49,7 +49,7 @@
 	},
 	"homepage": "https://github.com/three11/optisize#readme",
 	"dependencies": {
-		"glob": "7.2.0",
+		"globby": "12.0.2",
 		"imagemin": "8.0.1",
 		"imagemin-gifsicle": "7.0.0",
 		"imagemin-mozjpeg": "9.0.0",
