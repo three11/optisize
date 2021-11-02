@@ -7,23 +7,38 @@ import ora from 'ora';
 import sharp from 'sharp';
 import imagemin from 'imagemin';
 import { globby } from 'globby';
+import imageminSvgo from 'imagemin-svgo';
+import imageminWebp from 'imagemin-webp';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminPNGquant from 'imagemin-pngquant';
+import { cosmiconfigSync } from 'cosmiconfig';
 
+const explorer = cosmiconfigSync('optisize');
+const config = explorer.search()?.config;
 const plugins = [
 	imageminGifsicle({
-		interlaced: true
+		interlaced: true,
+		...(config?.gif || {})
 	}),
 	imageminMozjpeg({
-		quality: 70
+		quality: 70,
+		...(config?.jpeg || {})
 	}),
 	imageminPNGquant({
-		quality: [0.5, 0.7]
+		quality: [0.5, 0.7],
+		...(config?.png || {})
+	}),
+	imageminSvgo({
+		...(config?.svg || {})
+	}),
+	imageminWebp({
+		quality: 50,
+		...(config?.webp || {})
 	})
 ];
 
-const imagesGlob = '/*.{jpeg,jpg,gif,png}';
+const imagesGlob = '/*.{jpeg,jpg,gif,png,svg,webp}';
 
 const spinner = ora({
 	text: 'Optisize in progress...',
@@ -101,7 +116,7 @@ export const optisize = async (params = {}) => {
 
 	const isDir = lstatSync(src).isDirectory();
 
-	if (!isDir && !src.match(/.(jpg|jpeg|png|gif)$/i)) {
+	if (!isDir && !src.match(/.(jpg|jpeg|png|gif|svg|webp)$/i)) {
 		spinner.fail(wrongFileMsg);
 
 		return Promise.reject(wrongFileMsg);
