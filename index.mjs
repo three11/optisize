@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { resolve } from 'path';
 import { writeFileSync, existsSync, lstatSync } from 'fs';
 
@@ -18,7 +16,6 @@ const plugins = [
 	imageminMozjpeg({
 		quality: 70
 	}),
-	// @ts-ignore
 	imageminPNGquant({
 		quality: [0.5, 0.7]
 	})
