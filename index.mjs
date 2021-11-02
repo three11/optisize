@@ -1,9 +1,11 @@
+/** @typedef {{ src?: string, width?: number, height?: number }} OptisizeParams */
+
 import { resolve } from 'path';
 import { writeFileSync, existsSync, lstatSync } from 'fs';
 
 import ora from 'ora';
-import glob from 'glob';
 import sharp from 'sharp';
+import { sync } from 'glob';
 import imagemin from 'imagemin';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminGifsicle from 'imagemin-gifsicle';
@@ -31,7 +33,7 @@ const spinner = ora({
 /**
  * Resize an image using Sharp
  *
- * @param  {Object} params
+ * @param  {OptisizeParams} params
  * @param  {String} file
  *
  * @return {Promise<Buffer | void>}
@@ -53,7 +55,7 @@ export const optisizeFile = async (params, file) =>
 /**
  * Resize an image using Sharp
  *
- * @param  {Object} params
+ * @param  {OptisizeParams} params
  * @param  {String} file
  *
  * @return {Promise<void>}
@@ -75,9 +77,9 @@ export const optisizeSingle = async (params, file) =>
 /**
  * Resize images
  *
- * @param  {Object} params Settings
+ * @param  {OptisizeParams} params
  *
- * @return {Promise}
+ * @return {Promise<string | void[]>}
  */
 export const optisize = async (params = {}) => {
 	const { src } = params;
@@ -105,7 +107,7 @@ export const optisize = async (params = {}) => {
 		return Promise.reject(wrongFileMsg);
 	}
 
-	const files = isDir ? glob.sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
+	const files = isDir ? sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
 	const results = files.map(file => optisizeSingle(params, file));
 
 	return Promise.all(results);
