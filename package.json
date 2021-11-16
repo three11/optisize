@@ -57,7 +57,7 @@
 	},
 	"devDependencies": {
 		"image-size": "1.0.0",
-		"tape": "5.3.1"
+		"tape": "5.3.2"
 	},
 	"snyk": true
 }
