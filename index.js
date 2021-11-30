@@ -4,9 +4,9 @@ const { resolve } = require('path');
 const { writeFileSync, existsSync, lstatSync } = require('fs');
 
 const ora = require('ora');
+const glob = require('glob');
 const sharp = require('sharp');
 const imagemin = require('imagemin');
-const { globby } = require('globby');
 const imageminSvgo = require('imagemin-svgo');
 const imageminWebp = require('imagemin-webp');
 const imageminMozjpeg = require('imagemin-mozjpeg');
@@ -126,7 +126,7 @@ const optisize = async (params = {}) => {
 		return Promise.reject(wrongFileMsg);
 	}
 
-	const files = isDir ? await globby(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
+	const files = isDir ? glob.sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
 	const results = files.map(file => optisizeSingle(params, file));
 
 	return Promise.all(results);
