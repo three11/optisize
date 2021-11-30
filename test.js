@@ -1,7 +1,7 @@
 const sizeOf = require('image-size');
 
 const tape = require('tape');
-const optisize = require('./');
+const optisize = require('.');
 
 const src = 'assets';
 

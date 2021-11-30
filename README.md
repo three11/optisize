@@ -99,6 +99,31 @@ Optisize supports smart configuration settings via [Cosmiconfig](https://github.
 -   an "rc file" with the extensions `.json`, `.yaml`, `.yml`, `.js`, or `.cjs` - `.optisize.json`, `.optisize.yaml`, `.optisize.yml`, `.optisize.js`, or `.optisize.cjs`
 -   a `.config.js` or `.config.cjs` CommonJS module - `optisize.config.js` or `optisize.config.cjs`
 
+## Default configuration:
+
+```json
+{
+	// See https://github.com/imagemin/imagemin-gifsicle for more info
+	"gif": {
+		"interlaced": true
+	},
+	// See https://github.com/imagemin/imagemin-mozjpeg for more info
+	"jpeg": {
+		"quality": 70
+	},
+	// See https://github.com/imagemin/imagemin-pngquant for more info
+	"png": {
+		"quality": [0.5, 0.7]
+	},
+	// See https://github.com/imagemin/imagemin-svgo for more info
+	"svg": {},
+	// See https://github.com/imagemin/imagemin-webp for more info
+	"webp": {
+		"quality": 50
+	}
+}
+
 ## License
 
 MIT
+```
