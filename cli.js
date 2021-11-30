@@ -1,18 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-/**
- * External dependencies
- */
 const yargs = require('yargs').argv;
 
-/**
- * Internal dependencies
- */
 const optisize = require('./');
 
 /**
- * Command line arguments
+ * @type {Record<string, any>}
  */
 const { src, width, height } = yargs;
 

@@ -1,44 +1,47 @@
-/**
- * Node dependencies
- */
+/** @typedef {{ src?: string, width?: number, height?: number }} OptisizeParams */
+
 const { resolve } = require('path');
 const { writeFileSync, existsSync, lstatSync } = require('fs');
 
-/**
- * External dependencies
- */
 const ora = require('ora');
 const glob = require('glob');
 const sharp = require('sharp');
 const imagemin = require('imagemin');
+const imageminSvgo = require('imagemin-svgo');
+const imageminWebp = require('imagemin-webp');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminGifsicle = require('imagemin-gifsicle');
 const imageminPNGquant = require('imagemin-pngquant');
+const { cosmiconfigSync } = require('cosmiconfig');
 
-/**
- * Imagemin settings
- */
+const explorer = cosmiconfigSync('optisize');
+const config = explorer.search()?.config;
 const plugins = [
 	imageminGifsicle({
-		interlaced: true
+		interlaced: true,
+		...(config?.gif || {})
 	}),
 	imageminMozjpeg({
-		quality: 70
+		quality: 70,
+		...(config?.jpeg || {})
 	}),
 	// @ts-ignore
 	imageminPNGquant({
-		quality: [0.5, 0.7]
+		quality: [0.5, 0.7],
+		...(config?.png || {})
+	}),
+	// @ts-ignore
+	imageminSvgo({
+		...(config?.svg || {})
+	}),
+	imageminWebp({
+		quality: 50,
+		...(config?.webp || {})
 	})
 ];
 
-/**
- * Glob pattern for all images
- */
-const imagesGlob = '/*.{jpeg,jpg,gif,png}';
+const imagesGlob = '/*.{jpeg,jpg,gif,png,svg,webp}';
 
-/**
- * Initialize CLI spinner
- */
 const spinner = ora({
 	text: 'Optisize in progress...',
 	spinner: 'bouncingBall'
@@ -47,15 +50,16 @@ const spinner = ora({
 /**
  * Resize an image using Sharp
  *
- * @param  {Object} params
+ * @param  {OptisizeParams} params
  * @param  {String} file
  *
  * @return {Promise<Buffer | void>}
  */
-const optisizeFile = async (params, file) => {
-	return await sharp(file)
+const optisizeFile = async (params, file) =>
+	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
+		// @ts-ignore
 		.then(buffer => imagemin.buffer(buffer, { plugins }))
 		.then(buffer => {
 			spinner.succeed(`Optisized ${file}`);
@@ -65,20 +69,20 @@ const optisizeFile = async (params, file) => {
 		.catch(err => {
 			spinner.fail(`Optisize failed. Output: ${err}`);
 		});
-};
 
 /**
  * Resize an image using Sharp
  *
- * @param  {Object} params
+ * @param  {OptisizeParams} params
  * @param  {String} file
  *
  * @return {Promise<void>}
  */
-const optisizeSingle = async (params, file) => {
-	return await sharp(file)
+const optisizeSingle = async (params, file) =>
+	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
+		// @ts-ignore
 		.then(buffer => imagemin.buffer(buffer, { plugins }))
 		.then(buffer => {
 			writeFileSync(file, buffer);
@@ -88,14 +92,13 @@ const optisizeSingle = async (params, file) => {
 		.catch(err => {
 			spinner.fail(`Optisize failed. Output: ${err}`);
 		});
-};
 
 /**
  * Resize images
  *
- * @param  {Object} params Settings
+ * @param  {OptisizeParams} params
  *
- * @return {Promise}
+ * @return {Promise<string | void[]>}
  */
 const optisize = async (params = {}) => {
 	const { src } = params;
@@ -106,21 +109,21 @@ const optisize = async (params = {}) => {
 	if (!src) {
 		spinner.fail(noSrcMsg);
 
-		return;
+		return Promise.reject(noSrcMsg);
 	}
 
 	if (!existsSync(src)) {
 		spinner.fail(wrongSrcMsg);
 
-		return;
+		return Promise.reject(wrongSrcMsg);
 	}
 
 	const isDir = lstatSync(src).isDirectory();
 
-	if (!isDir && !src.match(/.(jpg|jpeg|png|gif)$/i)) {
+	if (!isDir && !src.match(/.(jpg|jpeg|png|gif|svg|webp)$/i)) {
 		spinner.fail(wrongFileMsg);
 
-		return;
+		return Promise.reject(wrongFileMsg);
 	}
 
 	const files = isDir ? glob.sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
@@ -130,5 +133,6 @@ const optisize = async (params = {}) => {
 };
 
 module.exports = optisize;
+module.exports.optisize = optisize;
 module.exports.optisizeFile = optisizeFile;
 module.exports.optisizeSingle = optisizeSingle;
