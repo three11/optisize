@@ -37,8 +37,10 @@ yarn.lock
 # Config files
 _config.yml
 .github
+.nvmrc
 .whitesource
 renovate.json
+tsconfig.json
 
 # Logo
 /logo
