@@ -51,7 +51,7 @@ This tool accepts the following arguments:
 ### Default:
 
 ```javascript
-import optisize from '@three11/optisize';
+const optisize = require('@three11/optisize');
 
 const optisizeSettings = {
 	src: 'path/to/images',

@@ -1,18 +1,18 @@
 /** @typedef {{ src?: string, width?: number, height?: number }} OptisizeParams */
 
-import { resolve } from 'path';
-import { writeFileSync, existsSync, lstatSync } from 'fs';
+const { resolve } = require('path');
+const { writeFileSync, existsSync, lstatSync } = require('fs');
 
-import ora from 'ora';
-import sharp from 'sharp';
-import imagemin from 'imagemin';
-import { globby } from 'globby';
-import imageminSvgo from 'imagemin-svgo';
-import imageminWebp from 'imagemin-webp';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminGifsicle from 'imagemin-gifsicle';
-import imageminPNGquant from 'imagemin-pngquant';
-import { cosmiconfigSync } from 'cosmiconfig';
+const ora = require('ora');
+const sharp = require('sharp');
+const imagemin = require('imagemin');
+const { globby } = require('globby');
+const imageminSvgo = require('imagemin-svgo');
+const imageminWebp = require('imagemin-webp');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminGifsicle = require('imagemin-gifsicle');
+const imageminPNGquant = require('imagemin-pngquant');
+const { cosmiconfigSync } = require('cosmiconfig');
 
 const explorer = cosmiconfigSync('optisize');
 const config = explorer.search()?.config;
@@ -25,10 +25,12 @@ const plugins = [
 		quality: 70,
 		...(config?.jpeg || {})
 	}),
+	// @ts-ignore
 	imageminPNGquant({
 		quality: [0.5, 0.7],
 		...(config?.png || {})
 	}),
+	// @ts-ignore
 	imageminSvgo({
 		...(config?.svg || {})
 	}),
@@ -53,10 +55,11 @@ const spinner = ora({
  *
  * @return {Promise<Buffer | void>}
  */
-export const optisizeFile = async (params, file) =>
+const optisizeFile = async (params, file) =>
 	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
+		// @ts-ignore
 		.then(buffer => imagemin.buffer(buffer, { plugins }))
 		.then(buffer => {
 			spinner.succeed(`Optisized ${file}`);
@@ -75,10 +78,11 @@ export const optisizeFile = async (params, file) =>
  *
  * @return {Promise<void>}
  */
-export const optisizeSingle = async (params, file) =>
+const optisizeSingle = async (params, file) =>
 	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
+		// @ts-ignore
 		.then(buffer => imagemin.buffer(buffer, { plugins }))
 		.then(buffer => {
 			writeFileSync(file, buffer);
@@ -96,7 +100,7 @@ export const optisizeSingle = async (params, file) =>
  *
  * @return {Promise<string | void[]>}
  */
-export const optisize = async (params = {}) => {
+const optisize = async (params = {}) => {
 	const { src } = params;
 	const noSrcMsg = 'Optisize failed: No src provided.';
 	const wrongSrcMsg = 'Optisize failed: Wrong src provided.';
@@ -128,4 +132,7 @@ export const optisize = async (params = {}) => {
 	return Promise.all(results);
 };
 
-export default optisize;
+module.exports = optisize;
+module.exports.optisize = optisize;
+module.exports.optisizeFile = optisizeFile;
+module.exports.optisizeSingle = optisizeSingle;

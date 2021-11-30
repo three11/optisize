@@ -1,9 +1,7 @@
-// @ts-nocheck
+const sizeOf = require('image-size');
 
-import sizeOf from 'image-size';
-
-import tape from 'tape';
-import optisize from './index.mjs';
+const tape = require('tape');
+const optisize = require('./');
 
 const src = 'assets';
 
@@ -23,6 +21,7 @@ tape('width should be 1000', async t => {
 		width: 1000
 	});
 
+	// @ts-ignore
 	const { width } = sizeOf('assets/unicorn.png');
 
 	t.equal(1000, width);
@@ -35,6 +34,7 @@ tape('height should be 500', async t => {
 		height: 500
 	});
 
+	// @ts-ignore
 	const { height } = sizeOf('assets/unicorn.png');
 
 	t.equal(500, height);
