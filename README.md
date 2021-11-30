@@ -122,8 +122,8 @@ Optisize supports smart configuration settings via [Cosmiconfig](https://github.
 		"quality": 50
 	}
 }
+```
 
 ## License
 
 MIT
-```
