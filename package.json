@@ -64,7 +64,7 @@
 	"devDependencies": {
 		"@types/node": "16.11.21",
 		"image-size": "1.0.1",
-		"tape": "5.4.1",
+		"tape": "5.5.0",
 		"typescript": "4.5.5"
 	}
 }
