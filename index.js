@@ -25,12 +25,10 @@ const plugins = [
 		quality: 70,
 		...(config?.jpeg || {})
 	}),
-	// @ts-ignore
 	imageminPNGquant({
 		quality: [0.5, 0.7],
 		...(config?.png || {})
 	}),
-	// @ts-ignore
 	imageminSvgo({
 		...(config?.svg || {})
 	}),
@@ -59,7 +57,6 @@ const optisizeFile = async (params, file) =>
 	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
-		// @ts-ignore
 		.then(buffer => imagemin.buffer(buffer, { plugins }))
 		.then(buffer => {
 			spinner.succeed(`Optisized ${file}`);
@@ -82,7 +79,6 @@ const optisizeSingle = async (params, file) =>
 	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
-		// @ts-ignore
 		.then(buffer => imagemin.buffer(buffer, { plugins }))
 		.then(buffer => {
 			writeFileSync(file, buffer);
