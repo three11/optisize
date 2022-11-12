@@ -49,7 +49,7 @@
 	},
 	"homepage": "https://github.com/three11/optisize#readme",
 	"dependencies": {
-		"cosmiconfig": "7.0.1",
+		"cosmiconfig": "7.1.0",
 		"glob": "8.0.3",
 		"imagemin": "7.0.1",
 		"imagemin-gifsicle": "7.0.0",
