@@ -13,5 +13,5 @@ const argv = yargs(hideBin(process.argv)).options({
 (async () => {
 	const { src, width, height } = await argv;
 
-	optisize({ src, width, height });
+	await optisize({ src, width, height });
 })();

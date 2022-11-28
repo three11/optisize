@@ -1,9 +1,7 @@
 import sizeOf from 'image-size';
-
 import tape, { Test } from 'tape';
-import optisize from '../src/optisize';
 
-const src = 'assets';
+import optisize from '../src/optisize';
 
 tape('should warn for missing src', async (t: Test) => {
 	try {
@@ -17,7 +15,7 @@ tape('should warn for missing src', async (t: Test) => {
 
 tape('width should be 1000', async (t: Test) => {
 	await optisize({
-		src,
+		src: 'assets',
 		width: 1000
 	});
 
@@ -29,7 +27,7 @@ tape('width should be 1000', async (t: Test) => {
 
 tape('height should be 500', async (t: Test) => {
 	await optisize({
-		src,
+		src: 'assets',
 		height: 500
 	});
 
