@@ -1,7 +1,6 @@
 [![GitHub release](https://img.shields.io/github/release/three11/optisize.svg)](https://github.com/three11/optisize/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/three11/optisize.svg)](https://github.com/three11/optisize/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/three11/optisize.svg)](https://github.com/three11/optisize/commits/master)
-[![Github file size](https://img.shields.io/github/size/three11/optisize/index.js.svg)](https://github.com/three11/optisize/)
 [![Build Status](https://travis-ci.org/three11/optisize.svg?branch=master)](https://travis-ci.org/three11/optisize)
 [![npm](https://img.shields.io/npm/dt/@three11/optisize.svg)](https://www.npmjs.com/package/@three11/optisize)
 [![npm](https://img.shields.io/npm/v/@three11/optisize.svg)](https://www.npmjs.com/package/@three11/optisize)
@@ -11,7 +10,7 @@
 
 # Optisize
 
-Tool for resizing and optimizing images with NodeJS
+> Resize and optimize images with NodeJS
 
 ## About
 
@@ -51,7 +50,7 @@ This tool accepts the following arguments:
 ### Default:
 
 ```javascript
-const optisize = require('@three11/optisize');
+import optisize from '@three11/optisize';
 
 const optisizeSettings = {
 	src: 'path/to/images',

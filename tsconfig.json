@@ -1,8 +1,39 @@
 {
-	"include": ["index.js"],
 	"compilerOptions": {
-		"allowJs": true,
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"baseUrl": "./",
+		"checkJs": false,
 		"declaration": true,
-		"emitDeclarationOnly": true
-	}
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": false,
+		"isolatedModules": true,
+		"jsx": "react",
+		"lib": ["DOM", "ESNext"],
+		"module": "ES2015",
+		"moduleResolution": "Node",
+		"noEmit": false,
+		"noEmitHelpers": false,
+		"noEmitOnError": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noStrictGenericChecks": false,
+		"outDir": "./dist",
+		"pretty": true,
+		"removeComments": false,
+		"sourceMap": true,
+		"strict": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"strictNullChecks": true,
+		"target": "ESNext"
+	},
+	"include": ["src/*.ts"],
+	"exclude": ["node_modules"]
 }

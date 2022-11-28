@@ -1,11 +1,11 @@
-const sizeOf = require('image-size');
+import sizeOf from 'image-size';
 
-const tape = require('tape');
-const optisize = require('.');
+import tape, { Test } from 'tape';
+import optisize from '../src/optisize';
 
 const src = 'assets';
 
-tape('should warn for missing src', async t => {
+tape('should warn for missing src', async (t: Test) => {
 	try {
 		await optisize();
 	} catch (e) {
@@ -15,26 +15,24 @@ tape('should warn for missing src', async t => {
 	t.end();
 });
 
-tape('width should be 1000', async t => {
+tape('width should be 1000', async (t: Test) => {
 	await optisize({
 		src,
 		width: 1000
 	});
 
-	// @ts-ignore
 	const { width } = sizeOf('assets/unicorn.png');
 
 	t.equal(1000, width);
 	t.end();
 });
 
-tape('height should be 500', async t => {
+tape('height should be 500', async (t: Test) => {
 	await optisize({
 		src,
 		height: 500
 	});
 
-	// @ts-ignore
 	const { height } = sizeOf('assets/unicorn.png');
 
 	t.equal(500, height);
