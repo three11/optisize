@@ -1,18 +1,22 @@
-/** @typedef {{ src?: string, width?: number, height?: number }} OptisizeParams */
+export interface OptisizeParams {
+	src?: string;
+	width?: number;
+	height?: number;
+}
 
-const { resolve } = require('path');
-const { writeFileSync, existsSync, lstatSync } = require('fs');
+import { resolve } from 'node:path';
+import { writeFileSync, existsSync, lstatSync } from 'node:fs';
 
-const ora = require('ora');
-const glob = require('glob');
-const sharp = require('sharp');
-const imagemin = require('imagemin');
-const imageminSvgo = require('imagemin-svgo');
-const imageminWebp = require('imagemin-webp');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminGifsicle = require('imagemin-gifsicle');
-const imageminPNGquant = require('imagemin-pngquant');
-const { cosmiconfigSync } = require('cosmiconfig');
+import ora from 'ora';
+import glob from 'glob';
+import sharp from 'sharp';
+import imagemin from 'imagemin';
+import imageminSvgo from 'imagemin-svgo';
+import imageminWebp from 'imagemin-webp';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminGifsicle from 'imagemin-gifsicle';
+import imageminPNGquant from 'imagemin-pngquant';
+import { cosmiconfigSync } from 'cosmiconfig';
 
 const explorer = cosmiconfigSync('optisize');
 const config = explorer.search()?.config;
@@ -45,15 +49,7 @@ const spinner = ora({
 	spinner: 'bouncingBall'
 }).start();
 
-/**
- * Resize an image using Sharp
- *
- * @param  {OptisizeParams} params
- * @param  {String} file
- *
- * @return {Promise<Buffer | void>}
- */
-const optisizeFile = async (params, file) =>
+export const optisizeFile = async (params: OptisizeParams, file: string): Promise<void | Buffer> =>
 	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
@@ -67,15 +63,7 @@ const optisizeFile = async (params, file) =>
 			spinner.fail(`Optisize failed. Output: ${err}`);
 		});
 
-/**
- * Resize an image using Sharp
- *
- * @param  {OptisizeParams} params
- * @param  {String} file
- *
- * @return {Promise<void>}
- */
-const optisizeSingle = async (params, file) =>
+export const optisizeSingle = async (params: OptisizeParams, file: string): Promise<void> =>
 	await sharp(file)
 		.resize(params.width, params.height)
 		.toBuffer()
@@ -89,14 +77,7 @@ const optisizeSingle = async (params, file) =>
 			spinner.fail(`Optisize failed. Output: ${err}`);
 		});
 
-/**
- * Resize images
- *
- * @param  {OptisizeParams} params
- *
- * @return {Promise<string | void[]>}
- */
-const optisize = async (params = {}) => {
+export const optisize = async (params: OptisizeParams = {}): Promise<string | void[]> => {
 	const { src } = params;
 	const noSrcMsg = 'Optisize failed: No src provided.';
 	const wrongSrcMsg = 'Optisize failed: Wrong src provided.';
@@ -128,7 +109,4 @@ const optisize = async (params = {}) => {
 	return Promise.all(results);
 };
 
-module.exports = optisize;
-module.exports.optisize = optisize;
-module.exports.optisizeFile = optisizeFile;
-module.exports.optisizeSingle = optisizeSingle;
+export default optisize;

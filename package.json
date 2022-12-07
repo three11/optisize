@@ -1,31 +1,20 @@
 {
 	"name": "@three11/optisize",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Resize and optimize images in a folder with Node JS",
-	"main": "index.js",
-	"typings": "index.d.ts",
-	"scripts": {
-		"test": "tape test.js",
-		"types": "tsc"
-	},
-	"bin": {
-		"optisize": "cli.js"
-	},
-	"engines": {
-		"node": ">=14"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/three11/optisize.git"
-	},
 	"keywords": [
+		"Image resize",
 		"Image optimization",
 		"Image transformation",
-		"Image resize",
+		"Bulk image resize",
 		"Bulk image optimization",
-		"Bulk image transformation",
-		"Bulk image resize"
+		"Bulk image transformation"
 	],
+	"homepage": "https://github.com/three11/optisize#readme",
+	"bugs": {
+		"url": "https://github.com/three11/optisize/issues"
+	},
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Three 11 Ltd",
@@ -43,28 +32,55 @@
 			"role": "Developer"
 		}
 	],
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/three11/optisize/issues"
+	"type": "module",
+	"main": "dist/optisize.js",
+	"types": "dist/optisize.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "github:three11/optisize"
 	},
-	"homepage": "https://github.com/three11/optisize#readme",
+	"scripts": {
+		"build": "tsc",
+		"test": "yarn build && node --experimental-specifier-resolution=node --loader ts-node/esm tests/index.ts",
+		"lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'"
+	},
+	"bin": {
+		"optisize": "dist/cli.js"
+	},
+	"engines": {
+		"node": ">=14"
+	},
 	"dependencies": {
 		"cosmiconfig": "8.0.0",
 		"glob": "8.0.3",
-		"imagemin": "7.0.1",
+		"imagemin": "8.0.1",
 		"imagemin-gifsicle": "7.0.0",
-		"imagemin-mozjpeg": "9.0.0",
+		"imagemin-mozjpeg": "10.0.0",
 		"imagemin-pngquant": "9.0.2",
-		"imagemin-svgo": "9.0.0",
-		"imagemin-webp": "6.0.0",
-		"ora": "5.4.1",
-		"sharp": "0.29.3",
+		"imagemin-svgo": "10.0.1",
+		"imagemin-webp": "7.0.0",
+		"ora": "6.1.2",
+		"sharp": "0.31.2",
 		"yargs": "17.6.2"
 	},
 	"devDependencies": {
+		"@types/glob": "8.0.0",
+		"@types/imagemin": "8.0.0",
+		"@types/imagemin-gifsicle": "7.0.1",
+		"@types/imagemin-mozjpeg": "8.0.1",
+		"@types/imagemin-svgo": "10.0.2",
+		"@types/imagemin-webp": "7.0.0",
+		"@types/sharp": "0.31.0",
+		"@types/tape": "4.13.2",
+		"@types/yargs": "17.0.14",
+		"@typescript-eslint/eslint-plugin": "5.44.0",
+		"@typescript-eslint/parser": "5.44.0",
 		"@types/node": "18.11.11",
+		"eslint": "8.28.0",
+		"eslint-config-prettier": "8.5.0",
 		"image-size": "1.0.2",
 		"tape": "5.6.1",
+		"ts-node": "10.9.1",
 		"typescript": "4.9.3"
 	}
 }
