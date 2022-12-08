@@ -2,7 +2,7 @@
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
 
-import optisize from './optisize';
+import optisize from './optisize.js';
 
 const argv = yargs(hideBin(process.argv)).options({
 	src: { type: 'string' },
