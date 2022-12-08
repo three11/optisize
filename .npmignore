@@ -35,7 +35,12 @@ _.config.yml
 .whitesource
 renovate.json
 tsconfig.json
+tsconfig-tests.json
 tslint.json
 yarn.lock
+
+assets
+logo
+tests
 
 !dist
