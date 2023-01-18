@@ -73,7 +73,7 @@
 		"@types/node": "18.11.18",
 		"@types/sharp": "0.31.1",
 		"@types/tape": "4.13.2",
-		"@types/yargs": "17.0.19",
+		"@types/yargs": "17.0.20",
 		"@typescript-eslint/eslint-plugin": "5.48.2",
 		"@typescript-eslint/parser": "5.48.2",
 		"eslint": "8.32.0",
