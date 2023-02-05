@@ -70,7 +70,7 @@
 		"@types/imagemin-mozjpeg": "8.0.1",
 		"@types/imagemin-svgo": "10.0.2",
 		"@types/imagemin-webp": "7.0.0",
-		"@types/node": "18.11.18",
+		"@types/node": "18.11.19",
 		"@types/sharp": "0.31.1",
 		"@types/tape": "4.13.2",
 		"@types/yargs": "17.0.22",
