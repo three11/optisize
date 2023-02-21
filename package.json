@@ -61,7 +61,7 @@
 		"imagemin-webp": "8.0.0",
 		"ora": "6.1.2",
 		"sharp": "0.31.3",
-		"yargs": "17.7.0"
+		"yargs": "17.7.1"
 	},
 	"devDependencies": {
 		"@types/glob": "8.0.1",
