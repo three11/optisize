@@ -103,7 +103,7 @@ export const optisize = async (params: OptisizeParams = {}): Promise<string | vo
 		return Promise.reject(wrongFileMsg);
 	}
 
-	const files = isDir ? glob.sync(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
+	const files = isDir ? await glob(`${resolve(src)}/**${imagesGlob}`) : [resolve(src)];
 	const results = files.map(file => optisizeSingle(params, file));
 
 	return Promise.all(results);
