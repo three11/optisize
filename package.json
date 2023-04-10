@@ -82,5 +82,9 @@
 		"tape": "5.6.3",
 		"ts-node": "10.9.1",
 		"typescript": "5.0.4"
+	},
+	"resolutions": {
+		"http-cache-semantics": "^4.1.1",
+		"semver-regex": "^4.0.5"
 	}
 }
