@@ -8,8 +8,8 @@ import { resolve } from 'node:path';
 import { writeFileSync, existsSync, lstatSync } from 'node:fs';
 
 import ora from 'ora';
-import glob from 'glob';
 import sharp from 'sharp';
+import { glob } from 'glob';
 import imagemin from 'imagemin';
 import imageminSvgo from 'imagemin-svgo';
 import imageminWebp from 'imagemin-webp';
