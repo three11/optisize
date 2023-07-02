@@ -79,7 +79,7 @@
 		"eslint": "8.44.0",
 		"eslint-config-prettier": "8.8.0",
 		"image-size": "1.0.2",
-		"tape": "5.6.3",
+		"tape": "5.6.4",
 		"ts-node": "10.9.1",
 		"typescript": "5.1.6"
 	},
