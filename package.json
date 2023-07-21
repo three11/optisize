@@ -60,7 +60,7 @@
 		"imagemin-svgo": "10.0.1",
 		"imagemin-webp": "8.0.0",
 		"ora": "6.3.1",
-		"sharp": "0.32.3",
+		"sharp": "0.32.4",
 		"yargs": "17.7.2"
 	},
 	"devDependencies": {
