@@ -265,10 +265,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tape@5.6.0":
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.0.tgz#d8bc031c3cac16a3df9d7865843db78af1e1c56e"
-  integrity sha512-yt27qxGg45IVJ0i2PdbYopND9d4eaXwne/jpi0saYb7PHYu8ZYaQB+cADjj+YZkZZjCM4rnhMPYFGd6+M8sWKg==
+"@types/tape@5.6.1":
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.1.tgz#3285ad2e5433f7672974330e8b1c8264962a1281"
+  integrity sha512-Rs3uJYjo+oAtF+X/icS75nIa/tnPmZEuFqxwZW456+PfM0gqyqDh4fU9Mp0msFkeeFzvLPp7F7nDfw1yYDLJVA==
   dependencies:
     "@types/node" "*"
     "@types/through" "*"
