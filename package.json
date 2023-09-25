@@ -85,6 +85,6 @@
 	"resolutions": {
 		"http-cache-semantics": "^4.1.1",
 		"semver-regex": "^4.0.5",
-		"strip-ansi": "^6.0.1"
+		"strip-ansi": "^7.0.0"
 	}
 }
