@@ -70,8 +70,7 @@
 		"@types/imagemin-mozjpeg": "8.0.1",
 		"@types/imagemin-svgo": "10.0.2",
 		"@types/imagemin-webp": "7.0.0",
-		"@types/node": "18.17.19",
-		"@types/sharp": "0.31.1",
+		"@types/node": "20.6.5",
 		"@types/tape": "5.6.1",
 		"@types/yargs": "17.0.25",
 		"@typescript-eslint/eslint-plugin": "6.7.2",
@@ -85,6 +84,7 @@
 	},
 	"resolutions": {
 		"http-cache-semantics": "^4.1.1",
-		"semver-regex": "^4.0.5"
+		"semver-regex": "^4.0.5",
+		"strip-ansi": "^6.0.1"
 	}
 }
