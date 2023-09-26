@@ -220,10 +220,10 @@
     "@types/imagemin" "*"
     "@types/svgo" "2"
 
-"@types/imagemin-webp@7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-webp/-/imagemin-webp-7.0.0.tgz#8fa322c9a2f99a3b57d459aec6e80e06ce050afa"
-  integrity sha512-Lb1tjy2vEU7qYwM5iFB9o5k0J3mIpulw6Yftset5LLLugPu7+C16rLYRP1WEwr4QM8AeJZRjC2BGBLd9lGvRhQ==
+"@types/imagemin-webp@7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-webp/-/imagemin-webp-7.0.1.tgz#0a450152cf11601e9ca8f0db6c8bb1609fd36a02"
+  integrity sha512-r1LJfx4KaL8Ij6L6Dif8Vjwqhg1MBy+5Gx+1SVE078E1s2t29i+5fgfqUujVUJpOkHb9nIq4l6qwoB9vZcivGw==
   dependencies:
     "@types/imagemin" "*"
 
