@@ -205,10 +205,10 @@
   dependencies:
     "@types/imagemin" "*"
 
-"@types/imagemin-mozjpeg@8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.1.tgz#eaf2f07aea3a317a1710ef2c763ec53f3bcfcdc5"
-  integrity sha512-kMQWEoKxxhlnH4POI3qfW9DjXlQfi80ux3l2b3j5R3eudSCoUIzKQLkfMjNJ6eMYnMWBcB+rfQOWqIzdIwFGKw==
+"@types/imagemin-mozjpeg@8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.2.tgz#9ded8e82dcc6e88d1341c1c694689d0db547bb86"
+  integrity sha512-jcCp5KGlmJHpvANnymFraVFjtOhErSKDfByzX1tBJqLsuCEO9JOhTVMC/tzfMyroJzWgs4yl8BYYpzzZgA/Pqw==
   dependencies:
     "@types/imagemin" "*"
 

@@ -67,7 +67,7 @@
 		"@types/glob": "8.1.0",
 		"@types/imagemin": "8.0.1",
 		"@types/imagemin-gifsicle": "7.0.2",
-		"@types/imagemin-mozjpeg": "8.0.1",
+		"@types/imagemin-mozjpeg": "8.0.2",
 		"@types/imagemin-svgo": "10.0.2",
 		"@types/imagemin-webp": "7.0.0",
 		"@types/node": "20.7.0",
