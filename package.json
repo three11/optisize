@@ -72,7 +72,7 @@
 		"@types/imagemin-webp": "7.0.1",
 		"@types/node": "20.8.2",
 		"@types/tape": "5.6.1",
-		"@types/yargs": "17.0.26",
+		"@types/yargs": "17.0.28",
 		"@typescript-eslint/eslint-plugin": "6.7.4",
 		"@typescript-eslint/parser": "6.7.4",
 		"eslint": "8.50.0",
