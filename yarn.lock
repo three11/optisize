@@ -227,10 +227,17 @@
   dependencies:
     "@types/imagemin" "*"
 
-"@types/imagemin@*", "@types/imagemin@8.0.1":
+"@types/imagemin@*":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@types/imagemin/-/imagemin-8.0.1.tgz#83795a10cdbe31a42ab304a7f8425588212c6a81"
   integrity sha512-DSpM//dRPzme7doePGkmR1uoquHi0h0ElaA5qFnxHECfFcB8z/jhMI8eqmxWNpHn9ZG18p4PC918sZLhR0cr5A==
+  dependencies:
+    "@types/node" "*"
+
+"@types/imagemin@8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@types/imagemin/-/imagemin-8.0.2.tgz#aa96b701d55dd355aa5658df8934bb02767adfc7"
+  integrity sha512-RcyM00BFTQQ5oFv88APJu4VFnm6xwtLEUiy2Z+lM8lay2NVwVAFetr1Koop1DNnwX+ZGKUgU4v8eZS8MsBEttg==
   dependencies:
     "@types/node" "*"
 
