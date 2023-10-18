@@ -205,10 +205,10 @@
     "@types/minimatch" "^5.1.2"
     "@types/node" "*"
 
-"@types/imagemin-gifsicle@7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-gifsicle/-/imagemin-gifsicle-7.0.2.tgz#62268872d01c948203f9e8405d7aa7de1b5ab27a"
-  integrity sha512-dxcBszAMvcyH1Ao4vQpT5B9lZEleYNoRN4FdiSmXLjKu3B33cZerUPR34nZ0FXkIfo5PECkRjuVAvQWvd9g+NA==
+"@types/imagemin-gifsicle@7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-gifsicle/-/imagemin-gifsicle-7.0.3.tgz#588f0f7e1cf723c19d12e6077007ddb460f40711"
+  integrity sha512-GQBKOk9doOd0Xp7OvO4QDl7U0Vkwk2Ps7J0rxafdAa7wG9lu7idvZTm8TtSZiRtHENdkW88Kz8OjmjMlgeeC5w==
   dependencies:
     "@types/imagemin" "*"
 
