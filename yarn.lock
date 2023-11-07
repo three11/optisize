@@ -219,10 +219,10 @@
   dependencies:
     "@types/imagemin" "*"
 
-"@types/imagemin-svgo@10.0.4":
-  version "10.0.4"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-svgo/-/imagemin-svgo-10.0.4.tgz#5274242382d4d3746b4417bbe0882c91d0fc781f"
-  integrity sha512-JAKXMr7sVzumfz4RSHOp2aiaIHZ/w1xjNDVBmTl91oUjbzDsUf/beiDK6+uZ5lrtWZTALBuFfCXWeNiqFRZ9cA==
+"@types/imagemin-svgo@10.0.5":
+  version "10.0.5"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-svgo/-/imagemin-svgo-10.0.5.tgz#9c4cdc751826d0ad09d6d9bcc90fb4480263eec3"
+  integrity sha512-9U2Rf7vWBHeqJvzmWNP3vYAKqR0208QqQ9Mkrq9OLIL5AeoF/dRVRou6iUYCufBSim57BpBpCJhZLrTgfS3k1g==
   dependencies:
     "@types/imagemin" "*"
     "@types/svgo" "2"
