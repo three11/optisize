@@ -212,10 +212,10 @@
   dependencies:
     "@types/imagemin" "*"
 
-"@types/imagemin-mozjpeg@8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@types/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.3.tgz#da7df35f9fe36bda5e1d010005025ea382ac548f"
-  integrity sha512-+U/ibETP2/oRqeuaaXa67dEpKHfzmfK0OBVC09AR4c1CIFAKjQ5xY+dxH+fjoMQRlwdcRQLkn/ALtnxSl3Xsqw==
+"@types/imagemin-mozjpeg@8.0.4":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@types/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.4.tgz#e419c277d30501eec8b031aa776452e4817d89b7"
+  integrity sha512-ZCAxV8SYJB8ehwHpnbRpHjg5Wc4HcyuAMiDhXbkgC7gujDoOTyHO3dhDkUtZ1oK1DLBRZapqG9etdLVhUml7yQ==
   dependencies:
     "@types/imagemin" "*"
 
