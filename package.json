@@ -80,7 +80,7 @@
 		"image-size": "1.0.2",
 		"tape": "5.7.2",
 		"ts-node": "10.9.1",
-		"typescript": "5.2.2"
+		"typescript": "5.3.2"
 	},
 	"resolutions": {
 		"http-cache-semantics": "^4.1.1",
