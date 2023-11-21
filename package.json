@@ -65,7 +65,7 @@
 	},
 	"devDependencies": {
 		"@types/glob": "8.1.0",
-		"@types/imagemin": "8.0.4",
+		"@types/imagemin": "8.0.5",
 		"@types/imagemin-gifsicle": "7.0.4",
 		"@types/imagemin-mozjpeg": "8.0.4",
 		"@types/imagemin-svgo": "10.0.5",
