@@ -75,7 +75,7 @@
 		"@types/yargs": "17.0.32",
 		"@typescript-eslint/eslint-plugin": "6.13.1",
 		"@typescript-eslint/parser": "6.13.1",
-		"eslint": "8.54.0",
+		"eslint": "8.55.0",
 		"eslint-config-prettier": "9.0.0",
 		"image-size": "1.0.2",
 		"tape": "5.7.2",
