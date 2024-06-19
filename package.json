@@ -52,7 +52,7 @@
 	},
 	"dependencies": {
 		"cosmiconfig": "9.0.0",
-		"glob": "10.4.1",
+		"glob": "10.4.2",
 		"imagemin": "8.0.1",
 		"imagemin-gifsicle": "7.0.0",
 		"imagemin-mozjpeg": "10.0.0",
