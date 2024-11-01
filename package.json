@@ -59,7 +59,7 @@
 		"imagemin-pngquant": "9.0.2",
 		"imagemin-svgo": "10.0.1",
 		"imagemin-webp": "8.0.0",
-		"ora": "8.1.0",
+		"ora": "8.1.1",
 		"sharp": "0.33.5",
 		"yargs": "17.7.2"
 	},
