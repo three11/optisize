@@ -245,7 +245,7 @@
     "@ljharb/through" "^2.3.13"
     call-bind "^1.0.7"
 
-"@ljharb/through@^2.3.13":
+"@ljharb/through@*", "@ljharb/through@^2.3.13":
   version "2.3.13"
   resolved "https://registry.yarnpkg.com/@ljharb/through/-/through-2.3.13.tgz#b7e4766e0b65aa82e529be945ab078de79874edc"
   integrity sha512-/gKJun8NNiWGZJkGzI/Ragc53cOdcLNdzjLaIa+GEjguQs0ulsurx8WN0jijdK9yPqDvziX995sMRLyLt1uZMQ==
@@ -398,19 +398,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tape@5.6.4":
-  version "5.6.4"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.4.tgz#efae4202493043457b1900dceb4808c8f04c7d8f"
-  integrity sha512-EmL4fJpZyByNCkupLLcJhneqcnT+rQUG5fWKNCsZyBK1x7nUuDTwwEerc4biEMZgvSK2+FXr775aLeXhKXK4Yw==
+"@types/tape@5.6.5":
+  version "5.6.5"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.5.tgz#61b23416b1517ece0eb46420a9f2787379fa42f9"
+  integrity sha512-/Eer3ugx8wLoJ4FFD2QzAO2RjuAys60WzvnVhOREHg+EGazbae9N095pLPGhDRErBkngl8YjZ1hApQ79UHraaQ==
   dependencies:
-    "@types/node" "*"
-    "@types/through" "*"
-
-"@types/through@*":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/@types/through/-/through-0.0.31.tgz#eb410602641807e74a90c5e951f46686e75eed1c"
-  integrity sha512-LpKpmb7FGevYgXnBXYs6HWnmiFyVG07Pt1cnbgM1IhEacITTiUaBXXvOR3Y50ksaJWGSfhbEvQFivQEFGCC55w==
-  dependencies:
+    "@ljharb/through" "*"
     "@types/node" "*"
 
 "@types/yargs-parser@*":
