@@ -398,10 +398,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tape@5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.8.0.tgz#42bd112d81f53f79548d36f838431678065f58f2"
-  integrity sha512-UK1ChHa29Udnlcrv5MPjm6OvFFntZZyt+fXGsJ1CdvcYI8xfzxLJwGmELCe9xKrQJ6JD52QCSSZrirZFO9S+lQ==
+"@types/tape@5.8.1":
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.8.1.tgz#9c9540ee1d426a4512332e11ddf40100b6d6e8ef"
+  integrity sha512-vRjK+E1c+I4WRDSXcYfgepPjz2Knh+gulU3359LrR9H2KM8AyiMbNmX7W5aMlw7JFoXMpVOhq3bEIm78qakGbQ==
   dependencies:
     "@ljharb/through" "*"
     "@types/node" "*"
