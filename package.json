@@ -70,7 +70,7 @@
 		"@types/imagemin-mozjpeg": "8.0.4",
 		"@types/imagemin-svgo": "10.0.5",
 		"@types/imagemin-webp": "7.0.3",
-		"@types/node": "20.17.58",
+		"@types/node": "20.19.24",
 		"@types/tape": "5.8.1",
 		"@types/yargs": "17.0.34",
 		"@typescript-eslint/eslint-plugin": "6.21.0",
