@@ -53,7 +53,7 @@
 	"dependencies": {
 		"cosmiconfig": "9.0.0",
 		"glob": "10.4.5",
-		"imagemin": "8.0.1",
+		"imagemin": "9.0.1",
 		"imagemin-gifsicle": "7.0.0",
 		"imagemin-mozjpeg": "10.0.0",
 		"imagemin-pngquant": "9.0.2",
@@ -65,7 +65,7 @@
 	},
 	"devDependencies": {
 		"@types/glob": "8.1.0",
-		"@types/imagemin": "8.0.5",
+		"@types/imagemin": "9.0.1",
 		"@types/imagemin-gifsicle": "7.0.4",
 		"@types/imagemin-mozjpeg": "8.0.4",
 		"@types/imagemin-svgo": "10.0.5",
